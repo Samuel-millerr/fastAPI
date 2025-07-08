@@ -1,15 +1,27 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-user_router = APIRouter(prefix="/user", tags=["usuarios"])
+from random import randint
 
-class User(BaseModel):
-    nome: str = None
-    senha: int = None
-    email: str = None
+user_router = APIRouter(prefix="/users", tags=["usuarios"])
+
+users = []
+
+class UserBase(BaseModel):
+    nome: str
+    email: str
+
+class User(UserBase):
+    id: int
+    admin: bool = False                 
+
+@user_router.post("/", response_model=User) 
+async def register_user(dados: UserBase):
+    novo_id = len(users) + 1
+    user = User(id=novo_id, **dados.dict())
+    users.append(user)    
+    raise HTTPException(status_code=201, detail="User Created")
 
 @user_router.get("/")
-async def verificar_usuario(user: User):
-    if user != "admin":
-        raise HTTPException(status_code=403, detail="User not authenticated" )
-    else:
-        return "Acesso liberado"
+async def list_users():
+    return users
+     
