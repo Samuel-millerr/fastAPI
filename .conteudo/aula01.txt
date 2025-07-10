@@ -18,6 +18,7 @@ Bibliotecas utilizadas para o funcionamento do FastAPI:
 - passlib[bcrypt]
 - python-dotenv
 - python-multipart
+- alembic | Processo de migração de banco de dados
 
 
 iniciação do servidor da api > uvicorn main:app
