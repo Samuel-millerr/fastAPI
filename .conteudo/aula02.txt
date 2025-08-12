@@ -1,0 +1,25 @@
+AULA 02 - Criação de Banco de dados
+
+No python atravé da biblioteca "sqlalchemy" é possível realizar a criação de classes no python que são traduzidas em tabalas no banco de dados, as informações criadas são
+passadas do banco de dados para o python atráves das classes criadas. Para esse processo é utilizado o ORM (Object Relational Mapper).
+
+*Passo a passo de criação dentro do "models.py"
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Processo de acesso de arquivos localizados em locais diferentes de uma estrutura de um diretorio
+
+1. Importar as bibliotecas sys e os 
+2. Aplicar o seguinte código:
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+os.path.dirname(__file__) -  Pega o caminho do arquivo localizado "fastapi/almebic/env.py" e os ".." permite voltar a pasta original do projeto 
+os.path.join - Junta o caminho do diretorio atual com ".." permitindo o acesso ao diretorio realizar
+os.path.abspath - Acessa o caminho absoluto e real da pasta desejada
+sys.path.append - Fazer imports de módulos localizados no diretorio pai
+
+alembic init almebic
+alembic revision --autogenerate -m "Initial Migration"
+alembic upgrade head
+
+

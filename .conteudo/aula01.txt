@@ -1,0 +1,45 @@
+AULA 01 - Introdução ao FastAPI
+
+## Tipos de API
+REST (Representatiational State Transfer) - JSON,regras mais flexiveis
+SOAP (Simple Object Acess Protocol) - XML, padronização de informações
+ 
+Estrutura principal de um projeto em FastAPI:
+-main
+-banco de dados
+-arquivo de modelos - definição e como será as tabelas do banco de dados
+-dependecias - permissões especificas, autenticação e usuário
+-scheames - estruturação dos processos
+
+Bibliotecas utilizadas para o funcionamento do FastAPI:
+- fastapi
+- uvicorn
+- sqlalchemy
+- passlib[bcrypt]
+- python-dotenv
+- python-multipart
+- alembic | Processo de migração de banco de dados
+
+
+iniciação do servidor da api > uvicorn main:app
+-------------------------------------------------------------------------------
+endpoint: #se trata de uma rota de acesso definida que recebe requisições HTTP
+/ordens
+
+Tipos de Requisições (Rest APIs):
+GET -> Leitura/Pegar 
+POST -> Enviar/Gravar
+PUT/PATH -> Edição
+DELETE -> Deletar
+
+*Ao criar um endpoint é necessario definir o tipo de requisição utilizada
+-------------------------------------------------------------------------------
+Códigos de Respostas HTTP
+
+Informational responses (100 - 199)
+Successful responses (200 - 299)
+Redirection messages (300 - 399)
+Client error respondeses (400 - 499)
+Server error respondes (500 - 599)
+
+*Dentro do fastAPI é utiizado a biblioteca HTTPExeption para realizar as respostas HTTP para o usuário

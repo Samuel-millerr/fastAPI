@@ -1,0 +1,6 @@
+Para iniciar as rotas e necessário estruturar elas dentro do arquivo "main" após a importação e inicialização do app
+1. Importar as rotas atraves do "from xxxx import xxxx"
+2. Criação das rotas em si dentro dos arquivos python referenciados atráves do "APIRouter", inclui a definição de endpoints e tags
+3. Adicionar decorator com determinadas requisições
+4. Definição das funções assincronas que serão utilizadas dentro da rota
+5. Usar o comando ".include_router" para incluir as rotas criadas, isso realizado no arquivo main
