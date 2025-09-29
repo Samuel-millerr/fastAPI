@@ -1,1 +1,2 @@
 from models.country_model import CountryModel
+from models.country_statistics_model import  CountryStatisticsModel
