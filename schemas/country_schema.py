@@ -1,6 +1,5 @@
 from pydantic import BaseModel as SCBaseModel
-from typing import Optional, Dict
-import json
+from typing import Optional
 
 class CountrySchema(SCBaseModel):
     id_country: Optional[int] = None

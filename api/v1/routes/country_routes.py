@@ -10,14 +10,13 @@ from core.deps import get_session
 
 router = APIRouter()
 
-@router.post("/", status_code=status.HTTP_200_OK, response_model=CountrySchema)
+@router.post("/", status_code=status.HTTP_201_CREATED, response_model=CountrySchema)
 async def create_country(country: CountrySchema, db: AsyncSession = Depends(get_session)):
     new_country = CountryModel(
         common_name = country.common_name,
         official_name = country.official_name,
         capital = country.capital,
         continent = country.continent,
-        area = country.area,
         primary_language = country.primary_language,
         coin_code = country.coin_code,
         demonym = country.demonym,
