@@ -7,7 +7,6 @@ class CountrySchema(SCBaseModel):
     official_name: Optional[str] = None
     capital: Optional[str] = None
     continent: Optional[str] = None
-    area: Optional[float] = None
     primary_language: Optional[str] = None
     coin_code: Optional[str] = None
     demonym: Optional[str] = None

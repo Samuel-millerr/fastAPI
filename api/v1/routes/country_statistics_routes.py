@@ -45,7 +45,7 @@ async def get_statistics(db: AsyncSession = Depends(get_session)):
 
         return statistics
     
-@router.get('/{id_country}', status_code=status.HTTP_200_OK, response_model=CountryStatisticsSchema)
+@router.get('/{id_statistic}', status_code=status.HTTP_200_OK, response_model=CountryStatisticsSchema)
 async def get_statistic(id_statistic: int, db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = select(CountryStatisticsModel).filter(CountryStatisticsModel.id_country_statistics == id_statistic)
@@ -57,3 +57,36 @@ async def get_statistic(id_statistic: int, db: AsyncSession = Depends(get_sessio
         else:
             raise HTTPException(detail="country statistic not found", status_code=status.HTTP_404_NOT_FOUND)
         
+@router.patch('/{id_statistic}', status_code=status.HTTP_200_OK, response_model=CountryStatisticsSchema)
+async def update_statistic_partial(id_statistic: int, statistic: CountryStatisticsSchema, db: AsyncSession = Depends(get_session)):
+    async with db as session:
+        query = select(CountryStatisticsModel).filter(CountryStatisticsModel.id_country_statistics == id_statistic)
+        result = await session.execute(query)
+        statistic_old = result.scalar_one_or_none()
+
+        if statistic_old:
+            update_data = statistic.dict(exclude_unset=True)
+
+            for key, value in update_data.items():
+                setattr(statistic_old, key, value)  
+        
+            await session.commit()
+
+            return statistic_old
+        else:
+            raise HTTPException(detail="country statistic not found", status_code=status.HTTP_404_NOT_FOUND)
+
+@router.delete('/{id_statistic}', status_code=status.HTTP_204_NO_CONTENT)
+async def delete_statistic(id_statistic: int, db: AsyncSession = Depends(get_session)):
+    async with db as session:
+        query = select(CountryStatisticsModel).filter(CountryStatisticsModel.id_country_statistics == id_statistic)
+        result = await session.execute(query)
+        statistic = result.scalar_one_or_none()
+
+        if statistic:
+            await session.delete(statistic)
+            await session.commit()
+
+            return {"message": "country statistic successfully delete"}
+        else:
+            return HTTPException(detail="country statistic not found", status_code=status.HTTP_404_NOT_FOUND)
