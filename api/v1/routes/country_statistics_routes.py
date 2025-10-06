@@ -53,7 +53,7 @@ async def get_statistic(id_statistic: int, db: AsyncSession = Depends(get_sessio
         statistic: CountryStatisticsSchema = result.scalar_one_or_none()
 
         if statistic:
-            pass
+            return statistic
         else:
             raise HTTPException(detail="country statistic not found", status_code=status.HTTP_404_NOT_FOUND)
         
