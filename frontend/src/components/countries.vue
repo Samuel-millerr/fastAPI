@@ -15,17 +15,13 @@ onMounted(() => {
     getCountries()
 })
 
-defineExpose({
-    countries
-})
-
 function goToStatistics(countryId) {
   router.push({ name: 'CountryDetails', params: { id: countryId } });
 }
 </script>
 
 <template>
-    <article>
+    <section>
         <h1>Lista de Países</h1>
         <table>
             <thead>
@@ -43,10 +39,21 @@ function goToStatistics(countryId) {
                 <td> {{ country.demonym }} </td>
             </tr>
         </table>
-    </article>
+      </section>
 </template>
 
-<style>
+<style scoped>
+article {
+  padding: 2rem;
+}
+
+section {padding: 2rem;}
+
+section h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -83,6 +90,6 @@ table td {
 }
 
 h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 </style>

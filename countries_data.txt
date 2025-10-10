@@ -1,63 +1,65 @@
+PAISES
 {
-  "country": {
-    "common_name": "Brazil",
-    "official_name": "Federative Republic of Brazil",
-    "capital": "Brasília",
-    "continent": "South America",
-    "primary_language": "Portuguese",
-    "coin_code": "BRL",
-    "demonym": "Brazilian",
-    "flag": "https://flagcdn.com/br.svg"
-  },
-  "statistics": {
-    "area": 8515767.0,
-    "population": 213993437,
-    "gdp_usd": 1839758040000.00,
-    "gdp_per_capita": 8591.0,
-    "hdi": 0.765,
-    "life_expectancy": 75
-  }
+  "common_name": "Brazil",
+  "official_name": "Federative Republic of Brazil",
+  "capital": "Brasília",
+  "continent": "South America",
+  "primary_language": "Portuguese",
+  "coin_code": "BRL",
+  "demonym": "Brazilian",
+  "flag": "https://flagcdn.com/br.svg"
 }
 
 {
-  "country": {
-    "common_name": "Japan",
-    "official_name": "State of Japan",
-    "capital": "Tokyo",
-    "continent": "Asia",
-    "primary_language": "Japanese",
-    "coin_code": "JPY",
-    "demonym": "Japanese",
-    "flag": "https://flagcdn.com/jp.svg"
-  },
-  "statistics": {
-    "area": 377975.0,
-    "population": 125960000,
-    "gdp_usd": 4936542500000.00,
-    "gdp_per_capita": 39250.5,
-    "hdi": 0.919,
-    "life_expectancy": 84
-  }
+  "common_name": "Japan",
+  "official_name": "State of Japan",
+  "capital": "Tokyo",
+  "continent": "Asia",
+  "primary_language": "Japanese",
+  "coin_code": "JPY",
+  "demonym": "Japanese",
+  "flag": "https://flagcdn.com/jp.svg"
 }
 
 {
-  "country": {
-    "common_name": "Germany",
-    "official_name": "Federal Republic of Germany",
-    "capital": "Berlin",
-    "continent": "Europe",
-    "primary_language": "German",
-    "coin_code": "EUR",
-    "demonym": "German",
-    "flag": "https://flagcdn.com/de.svg"
-  },
-  "statistics": {
-    "area": 357022.0,
-    "population": 83166711,
-    "gdp_usd": 4207086000000.00,
-    "gdp_per_capita": 50632.0,
-    "hdi": 0.947,
-    "life_expectancy": 81
-  }
+  "common_name": "Germany",
+  "official_name": "Federal Republic of Germany",
+  "capital": "Berlin",
+  "continent": "Europe",
+  "primary_language": "German",
+  "coin_code": "EUR",
+  "demonym": "German",
+  "flag": "https://flagcdn.com/de.svg"
 }
 
+
+ESTATISTICAS
+{
+  "id_country": 1,
+  "area": 8515767.0,
+  "population": 213993437,
+  "gdp_usd": 1839758040000.00,
+  "gdp_per_capita": 8591.0,
+  "hdi": 0.765,
+  "life_expectancy": 75
+}
+
+{
+  "id_country": 2,
+  "area": 377975.0,
+  "population": 125960000,
+  "gdp_usd": 4936542500000.00,
+  "gdp_per_capita": 39250.5,
+  "hdi": 0.919,
+  "life_expectancy": 84
+}
+
+{
+  "id_country": 3,
+  "area": 357022.0,
+  "population": 83166711,
+  "gdp_usd": 4207086000000.00,
+  "gdp_per_capita": 50632.0,
+  "hdi": 0.947,
+  "life_expectancy": 81
+}
