@@ -6,7 +6,7 @@ const countries = ref([]);
 const router = useRouter()
 
 async function getCountries() {
-    const response = await fetch("http://localhost:8002/api/v1/countries/");
+    const response = await fetch("http://localhost:8010/api/v1/countries/");
     const data = await response.json();
     countries.value = data;
 }
