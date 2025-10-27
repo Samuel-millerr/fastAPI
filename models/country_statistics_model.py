@@ -1,8 +1,9 @@
 from core.config import settings
 from sqlalchemy import Column, Float, BigInteger, Integer, ForeignKey
+from sqlalchemy.orm import relationship
 
 class CountryStatisticsModel(settings.DBBaseModel):
-    __tablename__ = 'paises_estatisticas'
+    __tablename__ = "paises_estatisticas"
 
     id_country_statistics: int = Column('id_country_statistics', Integer(), primary_key=True, autoincrement=True, nullable=False)
     id_country: int = Column('id_country', ForeignKey("paises.id_country"), nullable=False, unique=True)
@@ -12,3 +13,5 @@ class CountryStatisticsModel(settings.DBBaseModel):
     gdp_per_capita: float = Column('gdp_per_capita', Float(10, 2), nullable=True)
     hdi: float = Column('hdi', Float(1, 3), nullable=True)
     life_expectancy: int = Column('life_expectancy', Integer(), nullable=True)
+
+    country = relationship("CountryModel", back_populates="country_statistics")

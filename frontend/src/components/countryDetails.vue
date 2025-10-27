@@ -8,14 +8,14 @@ const route = useRoute()
 const id = computed(() => route.params.id)
 
 async function getCountry(countryId) {
-    const response = await fetch(`http://localhost:8000/api/v1/countries/${countryId}`);
+    const response = await fetch(`http://localhost:8002/api/v1/countries/${countryId}`);
     const data = await response.json();
     country.value = data;
     console.log(country.value)
 }
 
 async function getStatistic(countryId) {
-    const response = await fetch(`http://localhost:8000/api/v1/statistics/${countryId}`);
+    const response = await fetch(`http://localhost:8002/api/v1/statistics/${countryId}`);
     const data = await response.json();
     statistic.value = data;
     console.log(statistic.value)

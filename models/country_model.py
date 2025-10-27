@@ -1,8 +1,9 @@
 from core.config import settings
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
 class CountryModel(settings.DBBaseModel):
-    __tablename__ = 'paises'
+    __tablename__ = "paises"
 
     id_country: int = Column('id_country', Integer(), primary_key=True, autoincrement=True, nullable=False)
     common_name: str = Column('common_name', String(100), nullable=False)
@@ -14,3 +15,4 @@ class CountryModel(settings.DBBaseModel):
     demonym: str = Column('demonym', String(100), nullable=False)
     flag: str = Column('flag', String(255), nullable=True)
 
+    country_statistics = relationship("CountryStatisticsModel", back_populates="country")
