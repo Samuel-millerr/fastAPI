@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 from api.v1.routes import country_routes
 from api.v1.routes import country_statistics_routes
-from api.v1.routes import files
 
 api_router = APIRouter()
 

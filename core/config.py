@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base
 
 class Settings(BaseSettings):
     API_V1: str = "/api/v1"
-    DATABASE_URL = "mysql+asyncmy://root@127.0.0.1:3306/paises"
+    DATABASE_URL = ""
     DBBaseModel = declarative_base()
 
 class Config:
