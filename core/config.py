@@ -5,7 +5,7 @@ from sqlalchemy.orm import declarative_base
 class Settings(BaseSettings):
     API_V1: str = "/api/v1" # Declaração do caminho da API
     
-    DB_URL: str = "mysql+asyncmy://root@127.0.0.1:3306/escola" # URL do banco de dados
+    DB_URL: str = "postgresql+asyncpg://postgres:root@127.0.0.1:5432/escola" # URL do banco de dados
 
     DBBaseModel = declarative_base()
 

@@ -11,6 +11,7 @@ async def create_tables() -> None:
         await connection.run_sync(settings.DBBaseModel.metadata.drop_all)
         await connection.run_sync(settings.DBBaseModel.metadata.create_all)
 
+    await engine.dispose()
     print("Tabelas criadas com sucesso!")
 
 if __name__ == "__main__":

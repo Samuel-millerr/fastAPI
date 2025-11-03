@@ -2,7 +2,9 @@
 passado para a api em si """
 from fastapi import APIRouter
 from api.v1.routes import classes_routes
+from api.v1.routes import file_routes
 
 api_router  = APIRouter()
 
 api_router.include_router(classes_routes.router, prefix="/classes", tags=["Turmas"])
+api_router.include_router(file_routes.router, prefix="/arquivos", tags=["Arquivos"])

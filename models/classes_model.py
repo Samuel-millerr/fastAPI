@@ -1,5 +1,5 @@
 from core.config import settings
-from sqlalchemy import Column, Integer, String, Boolean, Float, Text, ForeignKey, Date
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 class ClassModel(settings.DBBaseModel):
