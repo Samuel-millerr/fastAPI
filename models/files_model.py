@@ -1,7 +1,7 @@
 from core.config import settings
 from sqlalchemy import Column, Integer, String, LargeBinary
 
-class FileModels(settings.DBBaseModel):
+class FileModel(settings.DBBaseModel):
     __tablename__ = "files"
 
     id: int = Column(Integer(), primary_key=True, index=True, autoincrement=True)
