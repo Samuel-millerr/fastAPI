@@ -1,0 +1,9 @@
+bcrypt==4.3.0
+cryptography
+fastapi
+python-jose
+python-multipart
+SQLAlchemy
+uvicorn
+passlib
+ 
